@@ -1,5 +1,7 @@
 <?php
 
+namespace Model\Form;
+
 class Formulario
 {
     private $x;
