@@ -13,12 +13,11 @@ use Model\Html\Tags\Button;
 class Formulario implements HtmlInterface
 {
     private $validator;
-    private $html = "";
 
     public function __construct(Validator $validator, $class = null, $action = null, $method = null)
     {
         $this->validator = $validator;
-        $this->html .= "<form class='".$class."' action='".$action."' method='".$method."'>";
+        echo "<form class='".$class."' action='".$action."' method='".$method."'>";
     }
 
     public function createField ($tipo, array $parametros)
@@ -35,18 +34,12 @@ class Formulario implements HtmlInterface
                 break;
         }
 
-        $this->html .= $campo->getHtml();
-    }
-
-    public function getHtml()
-    {
-        return $this->html;
+        return $campo;
     }
 
     public function render()
     {
-        $this->html .= "</form>";
-        echo $this->html;
+        echo "</form>";
     }
 
 }

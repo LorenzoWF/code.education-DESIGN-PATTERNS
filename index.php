@@ -15,20 +15,25 @@
             $validator = new Model\Html\Form\Validator($request);
             $form = new Model\Html\Form\Formulario($validator);
 
-            $form->createField("label", $opcoes = array("for" => "exampleInputEmail1",
-                                                        "texto" => "Nome:"));
+            $label = $form->createField("label", $opcoes = array("for" => "exampleInputEmail1",
+                                                                 "texto" => "Nome:"));
+            $label->render();
+
             echo "</br>";
 
-            $form->createField("input", $opcoes = array("name" => "texto",
-                                                        "type" => "text",
-                                                        "class" => "form-control",
-                                                        "placeholder" => "Nome"));
+            $input = $form->createField("input", $opcoes = array("name" => "texto",
+                                                                 "type" => "text",
+                                                                 "class" => "form-control",
+                                                                 "placeholder" => "Nome"));
+            $input->render();
             echo "</br>";
 
-            $form->createField("button", $opcoes = array("name" => "botao",
-                                                        "type" => "submit",
-                                                        "class" => "btn btn-success",
-                                                        "texto" => "Botao"));
+            $button = $form->createField("button", $opcoes = array("name" => "botao",
+                                                                   "type" => "submit",
+                                                                   "class" => "btn btn-success",
+                                                                   "texto" => "Botao"));
+            $button->render();
+
             $form->render();
 
         ?>
