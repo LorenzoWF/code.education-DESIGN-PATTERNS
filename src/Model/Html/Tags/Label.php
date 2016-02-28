@@ -23,6 +23,11 @@ class Label implements HtmlInterface
         $this->html .= "</label>";
     }
 
+    public function getHtml()
+    {
+        return $this->html;
+    }
+
     public function render()
     {
         echo $this->html;

@@ -8,6 +8,7 @@ use Model\Html\Form\Validator;
 use Model\Html\Tags\Label;
 use Model\Html\Tags\Input;
 use Model\Html\Tags\Button;
+use Model\Html\Tags\Fieldset;
 
 
 class Formulario implements HtmlInterface
@@ -22,6 +23,7 @@ class Formulario implements HtmlInterface
 
     public function createField ($tipo, array $parametros)
     {
+
         switch ($tipo) {
             case "input":
                 $campo = new Input($parametros);
@@ -32,9 +34,17 @@ class Formulario implements HtmlInterface
             case "label":
                 $campo = new Label($parametros);
                 break;
+            case "fieldset":
+                $campo = new Fieldset($parametros);
+                break;
         }
 
         return $campo;
+    }
+
+    public function getHtml()
+    {
+        return $this->html;
     }
 
     public function render()

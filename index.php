@@ -33,6 +33,26 @@
                                                                    "class" => "btn btn-success",
                                                                    "texto" => "Botao"));
             $button->render();
+            echo "</br>";
+
+            $inputfield = array("campo" => "input",
+                                "name" => "texto",
+                                "type" => "text",
+                                "class" => "form-control",
+                                "placeholder" => "Nome");
+
+            $botaofield = array("campo" => "button",
+                                "name" => "botao",
+                                "type" => "submit",
+                                "class" => "btn btn-success",
+                                "texto" => "Botao");
+
+            echo "</br>";
+
+            $fieldset = $form->createField("fieldset", $opcoes = array("legend" => "Fieldset teste",
+                                                                       "campos" => array($inputfield,
+                                                                                         $botaofield)));
+            $fieldset->render();
 
             $form->render();
 

@@ -35,6 +35,11 @@ class Button implements HtmlInterface
         $this->html .= "</button>";
     }
 
+    public function getHtml()
+    {
+        return $this->html;
+    }
+
     public function render()
     {
         echo $this->html;

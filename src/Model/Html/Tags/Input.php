@@ -35,6 +35,11 @@ class Input implements HtmlInterface
         $this->html .= ">";
     }
 
+    public function getHtml()
+    {
+        return $this->html;
+    }
+
     public function render()
     {
         echo $this->html;
